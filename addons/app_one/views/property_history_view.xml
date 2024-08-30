@@ -50,5 +50,5 @@
         <field name="res_model">property.history</field>
     </record>
 
-    <menuitem id="property_history_menu_item" name="History" parent="properties_menu" action="property_history_action"/>
+    <menuitem id="property_history_menu_item" name="History" parent="properties_menu" action="property_history_action" groups="app_one.property_manger_group" />
 </odoo>

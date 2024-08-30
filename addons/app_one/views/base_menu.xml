@@ -6,5 +6,7 @@
     />
 
     <menuitem id="properties_menu" name="Properties" parent="real_estate_root_menu" />
-    <menuitem id="configuration_menu" name="Configuration" parent="real_estate_root_menu" />
+    <menuitem id="configuration_menu" name="Configuration" parent="real_estate_root_menu" 
+        groups="app_one.property_manger_group"
+    />
 </odoo>

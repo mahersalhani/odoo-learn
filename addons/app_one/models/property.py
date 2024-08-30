@@ -104,6 +104,10 @@ class Property(models.Model):
             rec.create_history_record(rec.state, 'closed')
             rec.state = 'closed'
 
+    def action(self):
+        print(self.env['property'].search([('name', '=', 'property 1')]))
+        return True
+
     def check_selling_date(self):
         property_ids = self.search([])
         for record in property_ids:

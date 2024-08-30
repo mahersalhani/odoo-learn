@@ -27,9 +27,16 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+                        invisible="active" />
+                    
+                    <widget name="web_ribbon" title="Sold" bg_color="text-bg-success"
+                        invisible="state != 'sold'" />
+
                     <header>
                         <field name="state" widget="statusbar" />
                         <!-- <button name="action_draft" type="object" class="btn-primary" string="Set to Draft" invisible="state == 'draft'" /> -->
+                        <button name="action" type="object" class="btn-primary" string="Action" />
                         <button name="action_draft" type="object" class="btn-primary" string="Set to Draft" invisible="state in ('draft', 'closed')" />
                         <button name="action_pending" type="object" class="btn-secondary" string="Set to Pending" 
                             invisible="state != 'draft'" />
