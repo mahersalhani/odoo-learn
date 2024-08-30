@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   db:
     image: postgres:16
@@ -7,11 +7,23 @@ services:
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=odoo17@2023
       - POSTGRES_DB=postgres
-    restart: always             # run as a service
+    restart: always # run as a service
     volumes:
-        - ./postgresql:/var/lib/postgresql/data
+      - ./postgresql:/var/lib/postgresql/data
+
+  dbadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "salhany805@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "maher2003"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    restart: always # run as a service
 
   odoo17:
+    container_name: odoo17
     image: odoo:17
     user: root
     depends_on:
@@ -26,10 +38,9 @@ services:
       - USER=odoo
       - PASSWORD=odoo17@2023
     volumes:
-      #- /etc/timezone:/etc/timezone:ro
-      #- /etc/localtime:/etc/localtime:ro
-      # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
-    restart: always             # run as a service
-    
+    restart: always
+
+volumes:
+  pgadmin_data:
