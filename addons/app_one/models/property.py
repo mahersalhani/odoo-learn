@@ -108,6 +108,14 @@ class Property(models.Model):
         print(self.env['property'].search([('name', '=', 'property 1')]))
         return True
 
+    def action_open_owner(self):
+        action = self.env['ir.actions.actions']._for_xml_id(
+            'app_one.owner_action')
+        view_id = self.env.ref('app_one.owner_view_form').id
+        action['res_id'] = self.owner_id.id
+        action['views'] = [(view_id, 'form')]
+        return action
+
     def check_selling_date(self):
         property_ids = self.search([])
         for record in property_ids:
