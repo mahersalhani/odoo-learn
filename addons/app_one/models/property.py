@@ -7,7 +7,8 @@ class Property(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     ref = fields.Char(readonly=True, default='New')
-    name = fields.Char(required=True, default='New', size=12)
+    # name = fields.Char(required=True, default='New', size=12)
+    name = fields.Char(required=True, default='New', translate=True)
     description = fields.Text(tracking=True)
     postcode = fields.Char(required=1)  # Required field
     # Enable tracking on the date_availability field

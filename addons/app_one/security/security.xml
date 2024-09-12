@@ -1,5 +1,5 @@
 <odoo>
-  <record id="property_category_manager_group" model="ir.module.category">
+  <!-- <record id="property_category_manager_group" model="ir.module.category">
     <field name="name">Real Estate</field>
   </record>
 
@@ -23,5 +23,5 @@
     <field name="perm_write" eval="True" />
     <field name="perm_create" eval="True" />
     <field name="perm_unlink" eval="True" />
-  </record>
+  </record> -->
 </odoo>

@@ -1,8 +1,8 @@
 {
-    'name': 'App One',
+    'name': 'Ranvals',
     'author': "Maher Salhani",
     'category': '',
-    'description': 'App One',
+    'description': 'Ranvals',
     'version': '17.0.0.1.0',  # 17.0 -> Odoo version
     'depends': ['base', 'sale_management', 'account', 'mail'],
     'data': [
